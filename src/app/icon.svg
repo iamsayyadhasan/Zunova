@@ -1,0 +1,45 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Outer Neon Cyan/Blue Ring Gradient -->
+    <linearGradient id="icon-ring" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00E5FF" />
+      <stop offset="50%" stopColor="#2979FF" />
+      <stop offset="100%" stopColor="#0091EA" />
+    </linearGradient>
+
+    <!-- Z Top & Bottom Bar Gradient -->
+    <linearGradient id="icon-z-blue" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00B0FF" />
+      <stop offset="50%" stopColor="#2979FF" />
+      <stop offset="100%" stopColor="#1565C0" />
+    </linearGradient>
+
+    <!-- Z Diagonal Metallic Facet Gradient -->
+    <linearGradient id="icon-z-silver" x1="30" y1="25" x2="70" y2="75" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="45%" stopColor="#E2E8F0" />
+      <stop offset="85%" stopColor="#94A3B8" />
+      <stop offset="100%" stopColor="#475569" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="50" cy="50" r="48" fill="#070B14" />
+  
+  <!-- Outer Glowing Cyan/Blue Ring -->
+  <circle cx="50" cy="50" r="46" stroke="url(#icon-ring)" stroke-width="2.5" />
+
+  <!-- Geometric 3D 'Z' Emblem -->
+  <!-- Top Bar -->
+  <path d="M26 26H74L63 38H37L26 26Z" fill="url(#icon-z-blue)" />
+
+  <!-- Diagonal Main Metallic Ribbon -->
+  <path d="M63 38L32 74H48L74 38H63Z" fill="url(#icon-z-silver)" />
+
+  <!-- Bottom Bar -->
+  <path d="M26 74H74L63 62H37L26 74Z" fill="url(#icon-z-blue)" />
+
+  <!-- Dynamic Cyan Inner Corner Accents -->
+  <polygon points="63,38 74,38 70,44" fill="#00E5FF" />
+  <polygon points="26,74 37,62 31,62" fill="#00E5FF" />
+</svg>

@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Official Zunova Tech Navy Blue (rgb 26 40 66 / #1A2842) */
+  --brand-blue: 26 40 66;
+  --brand-primary: #1A2842;
+  --brand-primary-hover: #243656;
+  --brand-primary-active: #131E33;
+  --brand-primary-subtle: rgba(26, 40, 66, 0.25);
+
+  /* Dark theme tokens (default) */
+  --bg-primary: #070B14;
+  --bg-card: #0B1220;
+  --bg-elevated: #101B2F;
+  --accent-blue: #1A2842;
+  --accent-cyan: #70D9FF;
+  --text-primary: #F4F7FF;
+  --text-muted: #9BA8BF;
+  --border-color: #1E2A42;
+  --border-subtle: rgba(26, 40, 66, 0.4);
+  --glow-blue: rgba(26, 40, 66, 0.5);
+  --grid-line: rgba(26, 40, 66, 0.2);
+}
+
+html.light {
+  /* Official Zunova Tech Navy Blue (rgb 26 40 66 / #1A2842) */
+  --brand-blue: 26 40 66;
+  --brand-primary: #1A2842;
+  --brand-primary-hover: #243656;
+  --brand-primary-active: #0F172A;
+  --brand-primary-subtle: rgba(26, 40, 66, 0.1);
+
+  /* Light theme tokens */
+  --bg-primary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #F1F5F9;
+  --accent-blue: #1A2842;
+  --accent-cyan: #0284C7;
+  --text-primary: #0F172A;
+  --text-muted: #475569;
+  --border-color: #E2E8F0;
+  --border-subtle: rgba(26, 40, 66, 0.15);
+  --glow-blue: rgba(26, 40, 66, 0.1);
+  --grid-line: rgba(26, 40, 66, 0.05);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-inter);
+    line-height: 1.6;
+  }
+
+  /* Accessibility: Visible Focus Indicators */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(26, 40, 66, 0.65);
+    color: #FFFFFF;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Shimmer Animation for Skeleton Components */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.8s infinite;
+}
+
+html.light .animate-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shimmer::after {
+    animation: none !important;
+    display: none !important;
+  }
+}
