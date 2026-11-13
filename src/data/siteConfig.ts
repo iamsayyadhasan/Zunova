@@ -46,18 +46,23 @@ export const siteConfig: SiteConfig = {
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
-  contactEmail: "inquiries@zunova.tech",
+  contactEmail: "support@zunovatech.com",
   domain: "https://zunova.tech",
   socials: {
     instagram: {
       handle: "@zunovatech",
-      url: null, // Pending profile registration confirmation
-      isConfirmed: false,
+      url: "https://www.instagram.com/zunovatech/",
+      isConfirmed: true,
+    },
+    facebook: {
+      name: "Zunova Tech",
+      url: "https://www.facebook.com/profile.php?id=61596582296808",
+      isConfirmed: true,
     },
     linkedin: {
       name: "Zunova Tech",
-      url: null, // Pending profile URL confirmation
-      isConfirmed: false,
+      url: "https://www.linkedin.com/company/zunovatech/",
+      isConfirmed: true,
     },
     whatsapp: {
       number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || null,

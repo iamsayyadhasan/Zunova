@@ -54,15 +54,18 @@ export function Navbar() {
   const services = siteConfig.navLinks.find((l) => l.name === "Services")?.children || [];
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
-        scrolled
-          ? "bg-brand-bg/95 backdrop-blur-md border-brand-border shadow-md py-0"
-          : "bg-brand-bg/85 backdrop-blur-sm border-brand-border/60"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full">
+      <div
+        className={`w-full transition-all duration-300 border-b ${
+          isOpen
+            ? "bg-brand-bg border-brand-border shadow-sm"
+            : scrolled
+            ? "bg-brand-bg/95 backdrop-blur-md border-brand-border shadow-md py-0"
+            : "bg-brand-bg/85 backdrop-blur-sm border-brand-border/60"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20 transition-all duration-300">
           <div className="flex-shrink-0">
             <Logo variant="compact" size="md" priority />
           </div>
@@ -197,12 +200,14 @@ export function Navbar() {
           </div>
         </div>
       </div>
+    </div>
 
       <MobileNavDrawer
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         pathname={pathname}
         services={services}
+        serviceIcons={SERVICE_ICONS}
       />
     </header>
   );

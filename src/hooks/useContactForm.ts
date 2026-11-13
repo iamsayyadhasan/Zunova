@@ -6,6 +6,7 @@ import { ContactFormData, ContactFormErrors, ContactSubmitStatus } from "@/types
 const INITIAL_FORM_DATA: ContactFormData = {
   fullName: "",
   email: "",
+  phone: "",
   company: "",
   service: "",
   budget: "",
@@ -30,6 +31,15 @@ export function useContactForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
       newErrors.email = "Please enter a valid business email address.";
+    }
+
+    if (formData.phone && formData.phone.trim() !== "") {
+      const trimmedPhone = formData.phone.trim();
+      const digitsOnly = trimmedPhone.replace(/\D/g, "");
+      const phoneRegex = /^\+?[0-9\s\-().]{7,25}$/;
+      if (!phoneRegex.test(trimmedPhone) || digitsOnly.length < 7 || digitsOnly.length > 15) {
+        newErrors.phone = "Please enter a valid phone or WhatsApp number with country code.";
+      }
     }
 
     if (!formData.service) {

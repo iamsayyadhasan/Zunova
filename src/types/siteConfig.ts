@@ -16,6 +16,11 @@ export interface SocialConfig {
     url: string | null;
     isConfirmed: boolean;
   };
+  facebook: {
+    name: string;
+    url: string | null;
+    isConfirmed: boolean;
+  };
   linkedin: {
     name: string;
     url: string | null;

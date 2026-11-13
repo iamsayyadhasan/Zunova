@@ -14,7 +14,7 @@ export function ContactForm() {
 
   const mailtoSubject = encodeURIComponent(`Project Inquiry: ${formData.service || "General"}`);
   const mailtoBody = encodeURIComponent(
-    `Name: ${formData.fullName}\nCompany: ${formData.company}\nService: ${formData.service}\n\nProject Overview:\n${formData.description}`
+    `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nCompany: ${formData.company || "Not provided"}\nService: ${formData.service}\n\nProject Overview:\n${formData.description}`
   );
   const fallbackMailto = `mailto:${siteConfig.contactEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
@@ -89,6 +89,25 @@ export function ContactForm() {
             </div>
           </div>
 
+          <div>
+            <label htmlFor="phone" className="block text-xs font-semibold text-brand-text mb-2">
+              Phone / WhatsApp Number <span className="text-brand-muted font-normal">(Optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+91 98765 43210 or +1 (555) 000-0000"
+              className={`w-full px-4 py-3 rounded-lg bg-brand-elevated border text-sm text-brand-text placeholder:text-brand-muted/50 focus:outline-none transition-colors ${
+                errors.phone ? "border-red-500 focus:border-red-500" : "border-brand-border focus:border-brand-cyan"
+              }`}
+              aria-invalid={Boolean(errors.phone)}
+            />
+            {errors.phone && <p className="mt-1.5 text-xs text-red-500">{errors.phone}</p>}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label htmlFor="company" className="block text-xs font-semibold text-brand-text mb-2">
@@ -144,11 +163,12 @@ export function ContactForm() {
               className="w-full px-4 py-3 rounded-lg bg-brand-elevated border border-brand-border text-sm text-brand-text focus:outline-none focus:border-brand-cyan transition-colors"
             >
               <option value="">Select budget tier (if defined)...</option>
-              <option value="Under $5,000">Under $5,000 (Targeted automation / MVP audit)</option>
-              <option value="$5,000 - $15,000">$5,000 – $15,000 (Internal tool / Business dashboard)</option>
-              <option value="$15,000 - $35,000">$15,000 – $35,000 (Custom application / Mobile MVP)</option>
-              <option value="$35,000+">$35,000+ (Multi-system integration / Full platform)</option>
-              <option value="Flexible">Flexible / Dependent on discovery scope</option>
+              <option value="Under ₹50,000 – Small website / Minor automation">Under ₹50,000 – Small website / Minor automation</option>
+              <option value="₹50,000 – ₹1.5 Lakh – Business website / Basic integrations">₹50,000 – ₹1.5 Lakh – Business website / Basic integrations</option>
+              <option value="₹1.5 – ₹5 Lakh – Admin panel / Dashboard / MVP">₹1.5 – ₹5 Lakh – Admin panel / Dashboard / MVP</option>
+              <option value="₹5 – ₹12 Lakh – Custom application / Mobile app">₹5 – ₹12 Lakh – Custom application / Mobile app</option>
+              <option value="₹12 Lakh+ – SaaS platform / Enterprise software">₹12 Lakh+ – SaaS platform / Enterprise software</option>
+              <option value="Flexible / Open to recommendations">Flexible / Open to recommendations</option>
             </select>
           </div>
 

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { MessageCircle, Mail, ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
+import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { siteConfig } from "@/data/siteConfig";
 
 export function Footer() {
@@ -129,41 +130,65 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-wider text-brand-text mb-4">
               Connect
             </h3>
-            <div className="space-y-2 text-xs">
+            <div className="space-y-3 text-xs">
               <div>
-                <span className="text-brand-text font-medium block">Instagram</span>
-                {siteConfig.socials.instagram.isConfirmed && siteConfig.socials.instagram.url ? (
-                  <a
-                    href={siteConfig.socials.instagram.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-cyan hover:underline font-mono"
-                  >
-                    {siteConfig.socials.instagram.handle}
-                  </a>
-                ) : (
-                  <span className="text-brand-muted/70 font-mono text-[11px]">
-                    {siteConfig.socials.instagram.handle} (Pending setup)
+                <a
+                  href={siteConfig.socials.instagram.url || "https://www.instagram.com/zunovatech/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5 text-brand-text hover:text-brand-cyan transition-colors"
+                  aria-label="Follow Zunova Tech on Instagram"
+                >
+                  <span className="p-1.5 rounded-md bg-brand-elevated border border-brand-border text-brand-muted group-hover:text-brand-cyan group-hover:border-brand-cyan/40 transition-colors shrink-0">
+                    <InstagramIcon className="w-3.5 h-3.5" />
                   </span>
-                )}
+                  <div className="min-w-0">
+                    <span className="font-medium block leading-none">Instagram</span>
+                    <span className="text-[11px] text-brand-muted group-hover:text-brand-cyan font-mono transition-colors truncate block mt-0.5">
+                      {siteConfig.socials.instagram.handle}
+                    </span>
+                  </div>
+                </a>
               </div>
 
               <div>
-                <span className="text-brand-text font-medium block">LinkedIn</span>
-                {siteConfig.socials.linkedin.isConfirmed && siteConfig.socials.linkedin.url ? (
-                  <a
-                    href={siteConfig.socials.linkedin.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-cyan hover:underline font-mono"
-                  >
-                    Zunova Tech
-                  </a>
-                ) : (
-                  <span className="text-brand-muted/70 font-mono text-[11px]">
-                    Zunova Tech (Pending setup)
+                <a
+                  href={siteConfig.socials.facebook.url || "https://www.facebook.com/profile.php?id=61596582296808"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5 text-brand-text hover:text-brand-cyan transition-colors"
+                  aria-label="Follow Zunova Tech on Facebook"
+                >
+                  <span className="p-1.5 rounded-md bg-brand-elevated border border-brand-border text-brand-muted group-hover:text-brand-cyan group-hover:border-brand-cyan/40 transition-colors shrink-0">
+                    <FacebookIcon className="w-3.5 h-3.5" />
                   </span>
-                )}
+                  <div className="min-w-0">
+                    <span className="font-medium block leading-none">Facebook</span>
+                    <span className="text-[11px] text-brand-muted group-hover:text-brand-cyan font-mono transition-colors truncate block mt-0.5">
+                      {siteConfig.socials.facebook.name}
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href={siteConfig.socials.linkedin.url || "https://www.linkedin.com/company/zunovatech/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5 text-brand-text hover:text-brand-cyan transition-colors"
+                  aria-label="Follow Zunova Tech on LinkedIn"
+                >
+                  <span className="p-1.5 rounded-md bg-brand-elevated border border-brand-border text-brand-muted group-hover:text-brand-cyan group-hover:border-brand-cyan/40 transition-colors shrink-0">
+                    <LinkedinIcon className="w-3.5 h-3.5" />
+                  </span>
+                  <div className="min-w-0">
+                    <span className="font-medium block leading-none">LinkedIn</span>
+                    <span className="text-[11px] text-brand-muted group-hover:text-brand-cyan font-mono transition-colors truncate block mt-0.5">
+                      {siteConfig.socials.linkedin.name}
+                    </span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

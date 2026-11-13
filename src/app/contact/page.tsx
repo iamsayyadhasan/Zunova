@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Logo } from "@/components/ui/Logo";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Mail, Clock, MessageCircle, CheckCircle2 } from "lucide-react";
+import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
@@ -90,6 +91,48 @@ export default function ContactPage() {
                   <span className="text-xs text-brand-muted">
                     Typically within 1–2 business days with initial technical feedback.
                   </span>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-brand-border space-y-2">
+                <span className="text-xs text-brand-muted block">Official Social Channels</span>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  {siteConfig.socials.instagram.url && (
+                    <a
+                      href={siteConfig.socials.instagram.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-elevated border border-brand-border text-xs text-brand-text hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors"
+                      aria-label="Follow Zunova Tech on Instagram"
+                    >
+                      <InstagramIcon className="w-3.5 h-3.5 text-brand-cyan" />
+                      <span className="font-mono">{siteConfig.socials.instagram.handle}</span>
+                    </a>
+                  )}
+                  {siteConfig.socials.facebook.url && (
+                    <a
+                      href={siteConfig.socials.facebook.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-elevated border border-brand-border text-xs text-brand-text hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors"
+                      aria-label="Follow Zunova Tech on Facebook"
+                    >
+                      <FacebookIcon className="w-3.5 h-3.5 text-brand-cyan" />
+                      <span>{siteConfig.socials.facebook.name}</span>
+                    </a>
+                  )}
+                  {siteConfig.socials.linkedin.url && (
+                    <a
+                      href={siteConfig.socials.linkedin.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-elevated border border-brand-border text-xs text-brand-text hover:text-brand-cyan hover:border-brand-cyan/40 transition-colors"
+                      aria-label="Follow Zunova Tech on LinkedIn"
+                    >
+                      <LinkedinIcon className="w-3.5 h-3.5 text-brand-cyan" />
+                      <span>LinkedIn</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

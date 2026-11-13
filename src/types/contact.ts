@@ -1,6 +1,7 @@
 export interface ContactFormData {
   fullName: string;
   email: string;
+  phone?: string;
   company: string;
   service: string;
   budget: string;
@@ -12,6 +13,7 @@ export interface ContactFormData {
 export interface ContactFormErrors {
   fullName?: string;
   email?: string;
+  phone?: string;
   service?: string;
   description?: string;
   privacyConsent?: string;
