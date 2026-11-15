@@ -70,7 +70,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var stored = localStorage.getItem('zunova_theme') || 'system';
+                  var stored = localStorage.getItem('zunova_theme') || 'dark';
                   var isDark = stored === 'dark' || (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
                   var root = document.documentElement;
                   if (isDark) {
