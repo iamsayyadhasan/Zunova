@@ -36,20 +36,20 @@ html.light {
   --brand-primary: #1A2842;
   --brand-primary-hover: #243656;
   --brand-primary-active: #0F172A;
-  --brand-primary-subtle: rgba(26, 40, 66, 0.1);
+  --brand-primary-subtle: rgba(26, 40, 66, 0.08);
 
-  /* Light theme tokens */
-  --bg-primary: #F8FAFC;
+  /* Light theme tokens: crystal-clear, bright, professional */
+  --bg-primary: #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-elevated: #F1F5F9;
+  --bg-elevated: #F8FAFC;
   --accent-blue: #1A2842;
   --accent-cyan: #0284C7;
   --text-primary: #0F172A;
-  --text-muted: #475569;
+  --text-muted: #64748B;
   --border-color: #E2E8F0;
-  --border-subtle: rgba(26, 40, 66, 0.15);
-  --glow-blue: rgba(26, 40, 66, 0.1);
-  --grid-line: rgba(26, 40, 66, 0.05);
+  --border-subtle: rgba(26, 40, 66, 0.08);
+  --glow-blue: rgba(2, 132, 199, 0.06);
+  --grid-line: rgba(15, 23, 42, 0.03);
 }
 
 @layer base {

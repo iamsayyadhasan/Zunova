@@ -22,7 +22,7 @@ export function ContactCta() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-28 relative overflow-hidden bg-brand-bg border-t border-brand-border">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1A2842]/30 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] dark:bg-[#1A2842]/30 bg-sky-100/50 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="cta-box rounded-3xl border border-brand-border bg-brand-card p-8 sm:p-14 lg:p-16 shadow-2xl relative overflow-hidden transition-colors">

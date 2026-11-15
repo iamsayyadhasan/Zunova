@@ -105,9 +105,9 @@ export function HeroSection() {
       {/* Step 1: Ambient background glow */}
       <div
         ref={bgGlowRef}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[#1A2842]/40 blur-[130px] pointer-events-none rounded-full"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 dark:bg-[#1A2842]/40 bg-gradient-to-b from-sky-100/50 via-blue-50/20 to-transparent blur-[130px] pointer-events-none rounded-full"
       />
-      <div className="absolute -top-24 right-0 w-80 h-80 bg-brand-cyan/10 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute -top-24 right-0 w-80 h-80 dark:bg-brand-cyan/10 bg-cyan-100/30 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

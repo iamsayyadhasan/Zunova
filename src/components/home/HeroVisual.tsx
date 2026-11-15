@@ -4,8 +4,8 @@ import { CheckCircle2, Activity, Server, Database, Smartphone, ShieldCheck } fro
 export function HeroVisual() {
   return (
     <div className="relative w-full max-w-xl mx-auto lg:max-w-none">
-      {/* Background Ambient Glow with Official Navy (#1A2842) */}
-      <div className="absolute -inset-1.5 bg-gradient-to-r from-[#1A2842]/50 via-brand-cyan/20 to-[#1A2842]/30 rounded-2xl blur-xl opacity-75 pointer-events-none" />
+      {/* Background Ambient Glow with Official Navy (#1A2842) in dark, soft fresh glow in light */}
+      <div className="absolute -inset-1.5 dark:bg-gradient-to-r dark:from-[#1A2842]/50 dark:via-brand-cyan/20 dark:to-[#1A2842]/30 bg-gradient-to-r from-sky-200/30 via-cyan-100/20 to-blue-200/30 rounded-2xl blur-xl dark:opacity-75 opacity-60 pointer-events-none" />
 
       {/* Main Container Console */}
       <div className="relative rounded-2xl border border-brand-border bg-brand-card shadow-2xl p-4 sm:p-6 overflow-hidden transition-colors">

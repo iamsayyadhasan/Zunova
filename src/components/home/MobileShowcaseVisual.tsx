@@ -4,8 +4,8 @@ import { Smartphone, Wifi, Battery, ShieldCheck, CheckCircle2, ArrowRightLeft } 
 export function MobileShowcaseVisual() {
   return (
     <div className="relative w-full max-w-sm mx-auto">
-      {/* Ambient device glow with official navy (#1A2842) */}
-      <div className="absolute -inset-1 bg-gradient-to-tr from-brand-cyan/20 via-[#1A2842]/40 to-emerald-500/10 rounded-[2.5rem] blur-lg opacity-75 pointer-events-none" />
+      {/* Ambient device glow with official navy (#1A2842) in dark mode, light clean glow in light */}
+      <div className="absolute -inset-1 dark:bg-gradient-to-tr dark:from-brand-cyan/20 dark:via-[#1A2842]/40 dark:to-emerald-500/10 bg-gradient-to-tr from-cyan-100/30 via-sky-100/40 to-emerald-100/20 rounded-[2.5rem] blur-lg dark:opacity-75 opacity-60 pointer-events-none" />
 
       {/* Phone chassis */}
       <div className="relative rounded-[2.2rem] border-2 border-brand-border bg-[#070B14] shadow-2xl p-3 overflow-hidden text-brand-text">

@@ -14,7 +14,7 @@ export function Badge({
   };
 
   const variantStyles = {
-    accent: "bg-[#1A2842]/20 text-brand-text border border-[#1A2842]/50",
+    accent: "dark:bg-[#1A2842]/20 bg-sky-50 text-brand-text dark:border-[#1A2842]/50 border-sky-200",
     cyan: "bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/25",
     muted: "bg-brand-elevated text-brand-muted border border-brand-border",
     concept: "bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/30 font-mono uppercase tracking-wider text-[10px]",
