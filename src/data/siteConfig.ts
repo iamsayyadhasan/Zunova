@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
     { name: "Contact", href: "/contact" },
   ],
   contactEmail: "support@zunovatech.com",
-  domain: "https://zunova.tech",
+  domain: process.env.NEXT_PUBLIC_SITE_URL || "https://zunovatech.com",
   socials: {
     instagram: {
       handle: "@zunovatech",
